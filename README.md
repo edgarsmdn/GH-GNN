@@ -1,2 +1,1 @@
-# GNNGH
-Graph Neural Network-Gibbs-Helmholtz (GNNGH)
+# Gibbs-Helmholtz Graph Neural Netowkr (GH-GNN)
