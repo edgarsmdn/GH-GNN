@@ -1,0 +1,61 @@
+\documentclass{standalone}
+                        \usepackage{booktabs}
+                        \usepackage{multirow}
+                        \usepackage{graphicx}
+                        \usepackage{xcolor,colortbl}
+                        \begin{document}
+                        \begin{tabular}{lrll}
+\toprule
+                                  class1 &  values1 &                                   class2 & values2 \\
+\midrule
+     Benzene and substituted derivatives &      271 &            Phenanthrenes and derivatives &       4 \\
+                  Organooxygen compounds &      193 &                                  Lactams &       4 \\
+                             Fatty Acyls &      136 &                                 Epoxides &       4 \\
+                Organonitrogen compounds &      113 &               Keto acids and derivatives &       3 \\
+        Carboxylic acids and derivatives &      104 &                                Sulfonyls &       3 \\
+                  Saturated hydrocarbons &      103 &                Other non-metal organides &       3 \\
+                Unsaturated hydrocarbons &       67 &                              Azobenzenes &       3 \\
+                           Prenol lipids &       39 &                                 Dioxanes &       3 \\
+                         Organofluorides &       32 &    Homogeneous other non-metal compounds &       3 \\
+                                 Phenols &       30 &                                 Pyrroles &       3 \\
+                         Organochlorides &       28 &                                   Oxanes &       2 \\
+                           Alkyl halides &       27 &                               Dioxolanes &       2 \\
+               Pyridines and derivatives &       22 &                            Dihydrofurans &       2 \\
+                           Phenol ethers &       22 &                  Depsides and depsidones &       2 \\
+                            Naphthalenes &       20 &                               Thiophenes &       2 \\
+                          Organobromides &       19 &            Hydroxy acids and derivatives &       2 \\
+Allyl-type 1,3-dipolar organic compounds &       19 &   Organic sulfonic acids and derivatives &       2 \\
+Organic phosphoric acids and derivatives &       12 &                                 Oxolanes &       2 \\
+              Quinolines and derivatives &       12 & Organic phosphonic acids and derivatives &       2 \\
+                              Thioethers &       12 &                                Fluorenes &       2 \\
+                           Vinyl halides &       12 &   Organic sulfuric acids and derivatives &       2 \\
+                                  Thiols &       11 &                             Oxathiolanes &       2 \\
+                Heteroaromatic compounds &       11 &                  Indoles and derivatives &       2 \\
+                            Pyrrolidines &       11 &                               Oxathianes &       2 \\
+                           Organoiodides &       10 &                                Stilbenes &       1 \\
+                             Halohydrins &       10 &                             Acyl halides &       1 \\
+            Organic oxoanionic compounds &        9 &                              Thiophenols &       1 \\
+                                Lactones &        9 &                         Diarylheptanoids &       1 \\
+                             Piperidines &        9 &            Isoquinolines and derivatives &       1 \\
+                                  Furans &        9 &                              Benzofurans &       1 \\
+                              Azolidines &        9 &                               Aziridines &       1 \\
+  Organo-post-transition metal compounds &        9 &   Organophosphinic acids and derivatives &       1 \\
+               Organometalloid compounds &        8 &                     Homogeneous halogens &       1 \\
+                           Phenol esters &        8 &   Homogeneous transition metal compounds &       1 \\
+                              Oxazinanes &        8 &                                  Pyrenes &       1 \\
+                        Tetrahydrofurans &        7 &                              Anthracenes &       1 \\
+                               Thiolanes &        6 &                                  Indanes &       1 \\
+                                  Azoles &        6 &                          Benzothiophenes &       1 \\
+                              Sulfoxides &        6 &                      Oxacyclic compounds &       1 \\
+                 Polycyclic hydrocarbons &        6 &                                Tetralins &       1 \\
+                           Glycerolipids &        6 &                   Indenes and isoindenes &       1 \\
+  Organic carbonic acids and derivatives &        5 &                       Organic disulfides &       1 \\
+      Carboximidic acids and derivatives &        5 &                       Trialkylphosphites &       1 \\
+                          Organic oxides &        5 &                          Acyclic allenes &       1 \\
+                            Aryl halides &        5 &                      Organic metal salts &       1 \\
+                              Diazinanes &        4 &                                          &         \\
+\bottomrule
+\end{tabular}
+
+                        \end{document}
+                        
