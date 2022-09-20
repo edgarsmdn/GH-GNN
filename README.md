@@ -1,6 +1,8 @@
-# Gibbs-Helmholtz Graph Neural Netowkr (GH-GNN)
+# Gibbs-Helmholtz Graph Neural Network (GH-GNN)
 
 This repository contains the code used in the paper XXXX. 
+
+<img align="center" src="https://github.com/edgarsmdn/GH-GNN/blob/main/media/ghgnn_github.png" width="1000">
 
 ## Install
 
