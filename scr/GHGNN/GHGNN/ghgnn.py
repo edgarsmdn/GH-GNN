@@ -8,7 +8,7 @@ Email: sanchez@mpi-magdeburg.mpg.de
 -------------------------------------------------------------------------------
 '''
 
-from trained_model.GHGNN_architecture import GHGNN_model
+from GHGNN.GHGNN_architecture import GHGNN_model
 import torch
 from rdkit import Chem
 import numpy as np
@@ -130,7 +130,7 @@ def collate_T(data_list):
 # --- Model --- #
 #################
 
-class GHGNN():
+class GH_GNN():
     def __init__(self):
         self.architecture = GHGNN_model
        
@@ -165,7 +165,7 @@ class GHGNN():
         
         key_class = solvent_class + '_' + solute_class
         
-        with open('applicability_domain/training_classes.pickle', 'rb') as handle:
+        with open('training_classes.pickle', 'rb') as handle:
             training_classes = pickle.load(handle)
             
         try:
@@ -179,7 +179,7 @@ class GHGNN():
         solvent_fp = Chem.RDKFingerprint(solvent)
         solute_fp = Chem.RDKFingerprint(solute)
         
-        with open('applicability_domain/fps_training.pickle', 'rb') as handle:
+        with open('fps_training.pickle', 'rb') as handle:
             fps_training = pickle.load(handle)
         
         similarities_solv = sorted([FPS(solvent_fp, fp_train) for fp_train in fps_training])
