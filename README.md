@@ -4,21 +4,26 @@ This repository contains the code used in the paper XXXX.
 
 <img align="center" src="https://github.com/edgarsmdn/GH-GNN/blob/main/media/ghgnn_github.png" width="1000">
 
-## Install
+## Do you want to use GH-GNN?
 
-Install the conda enviornment:
+Check [this notebook](https://github.com/edgarsmdn/GH-GNN/blob/main/notebooks/002-eism-GH-GNN.ipynb) out (it can also run in Google Colab) to learn how to use GH-GNN for making predictions.
+
+## Do you want to run GH-GNN locally?
+
+### Install
+
+Clone the repository and create a conda environment with all dependencies installed by running by running:
 ```
+git clone https://github.com/edgarsmdn/GH-GNN.git
+cd GH-GNN
 conda env create -f enviornment.yml
-pip install -r requirements.txt
 ```
 
-To install this module for development:
+## If you use GH-GNN please cite the original publication as:
 
 ```
-python setup.py develop
+@Article{pending,
 ```
-
-
 
 ### License
 
