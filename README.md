@@ -6,7 +6,7 @@ This repository contains the code used in the paper XXXX.
 
 ## Do you want to use GH-GNN?
 
-Check [this notebook](https://github.com/edgarsmdn/GH-GNN/blob/main/notebooks/002-eism-GH-GNN.ipynb) out (it can also run in Google Colab) to learn how to use GH-GNN for making predictions.
+Check [this notebook](https://github.com/edgarsmdn/GH-GNN/blob/main/notebooks/002-eism-GH-GNN.ipynb) out to learn how to use GH-GNN for making predictions.
 
 ## Do you want to run GH-GNN locally?
 
