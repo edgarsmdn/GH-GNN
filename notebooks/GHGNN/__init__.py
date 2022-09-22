@@ -4,5 +4,6 @@ __email__ = "sanchez@mpi-magdeburg.mpg.de"
 __version__ = "0.1.0"
 
 
-from GHGNN.ghgnn import GH_GNN
+from .ghgnn import GH_GNN
+from .mol2graph import cat_dummy_graph
 

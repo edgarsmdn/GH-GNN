@@ -16,7 +16,7 @@ import torch_geometric.nn as gnn
 import numpy as np
 from torch_scatter import scatter_mean
 from torch_scatter import scatter_add
-from GHGNN.utilities.mol2graph import cat_dummy_graph
+from GHGNN.mol2graph import cat_dummy_graph
 
 
 class MPNNconv(nn.Module):

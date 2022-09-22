@@ -23,7 +23,9 @@ import json
 import time
 import pickle
 from rdkit.DataStructs import FingerprintSimilarity as FPS
+import pathlib
 
+current_path = str(pathlib.Path(__file__).parent.resolve())
 ##############################
 # --- Mol to graph utils --- #
 ##############################
@@ -140,32 +142,47 @@ class GH_GNN():
         hidden_dim = 113
         model    = GHGNN_model(v_in, e_in, u_in, hidden_dim)
         
-        path_parameters = 'trained_model/GHGNN.pth'
+        path_parameters = current_path+'/GHGNN.pth'
         available_device = 'cuda' if torch.cuda.is_available() else 'cpu'
         
         model.load_state_dict(torch.load(path_parameters, 
                                          map_location=torch.device(available_device)))
         self.device   = torch.device(available_device)
         self.model    = model.to(self.device)
+        self.classyfire_count = 0
+        self.first_query = time.time()
         
     def classify_mol(self, mol):
         inchikey = Chem.inchi.MolToInchiKey(mol)
         url = 'http://classyfire.wishartlab.com/entities/' + str(inchikey) + '.json'
-        self.last_query_time = time.time()
+        if self.classyfire_count == 0:
+            self.first_query = time.time()
+        
+        if self.classyfire_count >= 12:
+            while time.time() - self.first_query < 60:
+                time.sleep(0.1)
+            self.classyfire_count = 0
         try:
+            self.classyfire_count += 1
             with urllib.request.urlopen(url) as webpage:
                 data = json.loads(webpage.read().decode())
+                
+            if data['class']['name'] is None:
+                raise Exception()
             return data
         except:
             return None
     
     def indicator_class(self, solvent, solute):
-        solute_class = self.classify_mol(solute)['class']['name']
-        solvent_class = self.classify_mol(solvent)['class']['name']
+        solute_class = self.classify_mol(solute)
+        solvent_class = self.classify_mol(solvent)
+        
+        solute_class = solute_class['class']['name'] if solute_class != None else ''
+        solvent_class = solvent_class['class']['name'] if solvent_class != None else ''
         
         key_class = solvent_class + '_' + solute_class
         
-        with open('training_classes.pickle', 'rb') as handle:
+        with open(current_path+'/training_classes.pickle', 'rb') as handle:
             training_classes = pickle.load(handle)
             
         try:
@@ -179,7 +196,7 @@ class GH_GNN():
         solvent_fp = Chem.RDKFingerprint(solvent)
         solute_fp = Chem.RDKFingerprint(solute)
         
-        with open('fps_training.pickle', 'rb') as handle:
+        with open(current_path+'/training_fp.pickle', 'rb') as handle:
             fps_training = pickle.load(handle)
         
         similarities_solv = sorted([FPS(solvent_fp, fp_train) for fp_train in fps_training])
@@ -250,7 +267,8 @@ class GH_GNN():
                           bp=bp_solv,
                           topopsa=topopsa_solv,
                           hb=hb_solv, 
-                          inter_hb=inter_hb)
+                          inter_hb=inter_hb,
+                          y=torch.tensor([1]))
         
         nodes_info_solu = torch.tensor(np.array(node_f_solu), dtype=torch.float)
         edges_indx_solu = torch.tensor(np.array(edge_index_solu), dtype=torch.long)
@@ -260,7 +278,8 @@ class GH_GNN():
                           bp=bp_solu,
                           topopsa=topopsa_solu, 
                           hb=hb_solu, 
-                          inter_hb=inter_hb)
+                          inter_hb=inter_hb,
+                          y=torch.tensor([1]))
         
         return graph_solu, graph_solv
     
@@ -278,15 +297,16 @@ class GH_GNN():
             return None
         
         # Applicability domain
+        feasible_sys = True
         if AD=='both':
-            # Chemical class indicator
-            n_class = self.indicator_class(solvent, solute)
-            if n_class < 25:
-                feasible_sys = False
-            
             # Tanimoto similarity indicator
             max_10_sim = self.indicator_tanimoto(solvent, solute)
             if max_10_sim < 0.35:
+                feasible_sys = False
+            
+            # Chemical class indicator
+            n_class = self.indicator_class(solvent, solute)
+            if n_class < 25:
                 feasible_sys = False
             
         elif AD=='class':
@@ -325,11 +345,15 @@ class GH_GNN():
                
                 if torch.cuda.is_available():
                     ln_gamma_ij  = self.model(batch_solvent.cuda(), batch_solute.cuda(), batch_T.cuda()).cpu()
-                    ln_gamma_ij  = ln_gamma_ij.numpy().reshape(-1,)
+                    ln_gamma_ij  = ln_gamma_ij.numpy().reshape(-1,)[0]
                 else:
-                    ln_gamma_ij  = self.model(batch_solvent, batch_solute, batch_T).numpy().reshape(-1,)
+                    ln_gamma_ij  = self.model(batch_solvent, batch_solute, batch_T).numpy().reshape(-1,)[0]
                 
         if AD is None:
             return ln_gamma_ij
+        elif AD == 'class':
+            return ln_gamma_ij, feasible_sys, n_class
+        elif AD == 'tanimoto':
+            return ln_gamma_ij, feasible_sys, max_10_sim
         else:
             return ln_gamma_ij, feasible_sys, n_class, max_10_sim
