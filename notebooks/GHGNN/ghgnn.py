@@ -133,7 +133,22 @@ def collate_T(data_list):
 #################
 
 class GH_GNN():
-    def __init__(self):
+    def __init__(self, solute_smiles, solvent_smiles):
+        
+        # SMILES to Molecule
+        self.solute = Chem.MolFromSmiles(solute_smiles)
+        self.solvent = Chem.MolFromSmiles(solvent_smiles)
+        
+        if self.solute is None:
+            print(f'Current solute smiles ({solute_smiles}) was invalid for rdkit')
+            return None
+        elif self.solvent is None:
+            print(f'Current solvent smiles ({solvent_smiles}) was invalid for rdkit')
+            return None
+        
+        # Molecules to graphs
+        self.g_solute, self.g_solvent = self.sys2graphs(self.solute, self.solvent)
+        
         self.architecture = GHGNN_model
        
         v_in = 37
@@ -283,18 +298,10 @@ class GH_GNN():
         
         return graph_solu, graph_solv
     
-    def predict(self, solute_smiles, solvent_smiles, T, AD='both'):
+    def predict(self, T, AD='both'):
         
-        # SMILES to Molecule
-        solute = Chem.MolFromSmiles(solute_smiles)
-        solvent = Chem.MolFromSmiles(solvent_smiles)
-        
-        if solute is None:
-            print(f'Current solute smiles ({solute_smiles}) was invalid for rdkit')
-            return None
-        elif solvent is None:
-            print(f'Current solvent smiles ({solvent_smiles}) was invalid for rdkit')
-            return None
+        solute = self.solute
+        solvent = self.solvent
         
         # Applicability domain
         feasible_sys = True
@@ -324,9 +331,8 @@ class GH_GNN():
         else:
             raise Exception('Invalid value for AD')
         
+        g_solute, g_solvent = self.g_solute, self.g_solvent
         
-        # Molecules to graphs
-        g_solute, g_solvent = self.sys2graphs(solute, solvent)
         g_T = Data(x=torch.tensor(T, dtype=torch.float).reshape(1))
         
         pair_dataset = PairDataset_T([g_solvent], [g_solute], [g_T])
