@@ -19,7 +19,7 @@ cd GH-GNN
 conda env create -f enviornment.yml
 ```
 
-## If you use GH-GNN please cite the original publication as:
+## If you use GH-GNN please give a star to this repo and cite the original publication as:
 
 ```
 @Article{pending,
