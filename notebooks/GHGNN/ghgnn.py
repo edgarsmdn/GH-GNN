@@ -167,6 +167,8 @@ class GH_GNN():
         self.classyfire_count = 0
         self.first_query = time.time()
         
+        self.interpolation = self.check_interpolation(self.solvent, self.solute)
+        
     def classify_mol(self, mol):
         inchikey = Chem.inchi.MolToInchiKey(mol)
         url = 'http://classyfire.wishartlab.com/entities/' + str(inchikey) + '.json'
@@ -187,6 +189,23 @@ class GH_GNN():
             return data
         except:
             return None
+    
+    def check_interpolation(self, solvent, solute):
+        
+        solvent_smiles = Chem.MolToSmiles(solvent)
+        solute_smiles = Chem.MolToSmiles(solute)
+        
+        with open(current_path+'/training_solutes.pickle', 'rb') as handle:
+            training_solutes = pickle.load(handle)
+            
+        with open(current_path+'/training_solvents.pickle', 'rb') as handle:
+            training_solvents = pickle.load(handle)
+            
+        if solvent_smiles in training_solvents and solute_smiles in training_solutes:
+            return True
+        else:
+            return False
+        
     
     def indicator_class(self, solvent, solute):
         solute_class = self.classify_mol(solute)
@@ -306,26 +325,39 @@ class GH_GNN():
         # Applicability domain
         feasible_sys = True
         if AD=='both':
-            # Tanimoto similarity indicator
-            max_10_sim = self.indicator_tanimoto(solvent, solute)
-            if max_10_sim < 0.35:
-                feasible_sys = False
-            
-            # Chemical class indicator
-            n_class = self.indicator_class(solvent, solute)
-            if n_class < 25:
-                feasible_sys = False
+            if self.interpolation:
+                feasible_sys = True
+                max_10_sim = None
+                n_class = None
+            else:
+                # Tanimoto similarity indicator
+                max_10_sim = self.indicator_tanimoto(solvent, solute)
+                if max_10_sim < 0.35:
+                    feasible_sys = False
+                
+                # Chemical class indicator
+                n_class = self.indicator_class(solvent, solute)
+                if n_class < 25:
+                    feasible_sys = False
             
         elif AD=='class':
-            # Chemical class indicator
-            n_class = self.indicator_class(solvent, solute)
-            if n_class < 25:
-                feasible_sys = False
+            if self.interpolation:
+                feasible_sys = True
+                n_class = None
+            else:
+                # Chemical class indicator
+                n_class = self.indicator_class(solvent, solute)
+                if n_class < 25:
+                    feasible_sys = False
         elif AD=='tanimoto':
-            # Tanimoto similarity indicator
-            max_10_sim = self.indicator_tanimoto(solvent, solute)
-            if max_10_sim < 0.35:
-                feasible_sys = False
+            if self.interpolation:
+                feasible_sys = True
+                max_10_sim = None
+            else:
+                # Tanimoto similarity indicator
+                max_10_sim = self.indicator_tanimoto(solvent, solute)
+                if max_10_sim < 0.35:
+                    feasible_sys = False
         elif AD is None:
             feasible_sys = None
         else:
