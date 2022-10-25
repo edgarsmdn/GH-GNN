@@ -25,6 +25,8 @@ conda env create -f enviornment.yml
 @Article{pending,
 ```
 
+If you use GH-GNN you could also give a star :star: to this repo
+
 ### License
 
 This material is licensed under the [MIT license](https://github.com/edgarsmdn/GH-GNN/blob/main/LICENSE) and is free and provided as-is. If you use the code provided in this repository please cite the original publication.
