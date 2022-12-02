@@ -200,8 +200,11 @@ class GH_GNN():
             
         with open(current_path+'/training_solvents.pickle', 'rb') as handle:
             training_solvents = pickle.load(handle)
+        
+        self.solvent_in_training = solvent_smiles in training_solvents
+        self.solute_in_training = solute_smiles in training_solutes
             
-        if solvent_smiles in training_solvents and solute_smiles in training_solutes:
+        if self.solvent_in_training and self.solute_in_training:
             return True
         else:
             return False
@@ -233,13 +236,18 @@ class GH_GNN():
         with open(current_path+'/training_fp.pickle', 'rb') as handle:
             fps_training = pickle.load(handle)
         
-        similarities_solv = sorted([FPS(solvent_fp, fp_train) for fp_train in fps_training])
-        similarities_solu = sorted([FPS(solute_fp, fp_train) for fp_train in fps_training])
-        
-        max_10_sim_solv = np.mean(similarities_solv[-10])
-        max_10_sim_solu = np.mean(similarities_solu[-10])
-        max_10_sim = min(max_10_sim_solv, max_10_sim_solu)
-        
+        if not self.solvent_in_training and not self.solute_in_training:
+            similarities_solv = sorted([FPS(solvent_fp, fp_train) for fp_train in fps_training])
+            similarities_solu = sorted([FPS(solute_fp, fp_train) for fp_train in fps_training])
+            max_10_sim_solv = np.mean(similarities_solv[-10])
+            max_10_sim_solu = np.mean(similarities_solu[-10])
+            max_10_sim = min(max_10_sim_solv, max_10_sim_solu)
+        elif self.solvent_in_training:
+            similarities_solu = sorted([FPS(solute_fp, fp_train) for fp_train in fps_training])
+            max_10_sim = np.mean(similarities_solu[-10])
+        elif self.solute_in_training:
+            similarities_solv = sorted([FPS(solvent_fp, fp_train) for fp_train in fps_training])
+            max_10_sim = np.mean(similarities_solv[-10])
         return max_10_sim
     
     def sys2graphs(self, solute, solvent):
@@ -319,6 +327,7 @@ class GH_GNN():
     
     def predict(self, T, AD='both'):
         
+        T = T - 273.15 # GHGNN is trained with T in C
         solute = self.solute
         solvent = self.solvent
         
@@ -327,8 +336,8 @@ class GH_GNN():
         if AD=='both':
             if self.interpolation:
                 feasible_sys = True
-                max_10_sim = None
-                n_class = None
+                max_10_sim = 9999 # Just a large number for indicating interpolation
+                n_class = 9999 # Just a large number for indicating interpolation
             else:
                 # Tanimoto similarity indicator
                 max_10_sim = self.indicator_tanimoto(solvent, solute)
@@ -343,7 +352,7 @@ class GH_GNN():
         elif AD=='class':
             if self.interpolation:
                 feasible_sys = True
-                n_class = None
+                n_class = 9999 # Just a large number for indicating interpolation
             else:
                 # Chemical class indicator
                 n_class = self.indicator_class(solvent, solute)
@@ -352,7 +361,7 @@ class GH_GNN():
         elif AD=='tanimoto':
             if self.interpolation:
                 feasible_sys = True
-                max_10_sim = None
+                max_10_sim = 9999 # Just a large number for indicating interpolation
             else:
                 # Tanimoto similarity indicator
                 max_10_sim = self.indicator_tanimoto(solvent, solute)
