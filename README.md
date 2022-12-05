@@ -1,6 +1,6 @@
 # Gibbs-Helmholtz Graph Neural Network (GH-GNN)
 
-This repository contains the code used in the paper XXXX. 
+This repository contains the code used in the paper [Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution](https://arxiv.org/abs/2212.01199). 
 
 <img align="center" src="https://github.com/edgarsmdn/GH-GNN/blob/main/media/ghgnn_github.png" width="1000">
 
@@ -22,7 +22,12 @@ conda env create -f enviornment.yml
 ## If you use GH-GNN please cite the original publication as:
 
 ```
-@Article{pending,
+@article{sanchez2022ghgnn,
+  title={Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution},
+  author={Sanchez Medina, Edgar Ivan and Linke, Steffen and Stoll, Martin and Sundmacher, Kai},
+  journal={arXiv preprint arXiv:2212.01199},
+  year={2022}
+}
 ```
 
 If you use GH-GNN you could also give a star :star: to this repo
