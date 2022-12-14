@@ -18,7 +18,7 @@ from rdkit import Chem
 from sklearn.model_selection import KFold
 
 # Internal utilities
-from GNNGH_T_architecture import GNNGH_T, count_parameters
+from GH_GNN_architecture import GNNGH_T, count_parameters
 from utilities.mol2graph import get_dataloader_pairs_T, sys2graph, n_atom_features, n_bond_features
 from utilities.Train_eval import train, eval, MAE
 from utilities.save_info import save_train_traj

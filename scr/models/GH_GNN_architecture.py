@@ -208,11 +208,11 @@ class GNNGH_T(nn.Module):
         
         # ---- Atomic polarizability
         ap1 = solvent.ap.reshape(-1,1)
-        ap2 = solvent.ap.reshape(-1,1)
+        ap2 = solute.ap.reshape(-1,1)
         
         # ---- Bond polarizability
         bp1 = solvent.bp.reshape(-1,1)
-        bp2 = solvent.bp.reshape(-1,1)
+        bp2 = solute.bp.reshape(-1,1)
         
         # -- Polarity via topological polar surface area
         topopsa1 = solvent.topopsa.reshape(-1,1)

@@ -9,7 +9,7 @@ Email: sanchez@mpi-magdeburg.mpg.de
 import pandas as pd
 from rdkit import Chem
 from utilities.mol2graph import get_dataloader_pairs_T, sys2graph, n_atom_features, n_bond_features
-from GNNGH_T_architecture import GNNGH_T
+from GH_GNN_architecture import GNNGH_T
 import torch
 import os
 import numpy as np
