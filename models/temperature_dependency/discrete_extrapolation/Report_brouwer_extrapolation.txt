@@ -2,4 +2,4 @@
 ------------------------------
 brouwer_extrapolation
     --- MAE              SolvGNNGH  0.21254694066666666
-    --- MAE                GNNGH_T  0.3375276814502411
+    --- MAE                GNNGH_T  0.22169717614762366

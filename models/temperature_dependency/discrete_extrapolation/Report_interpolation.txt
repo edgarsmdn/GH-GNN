@@ -3,5 +3,5 @@
 interpolation
     --- MAE              SolvGNNGH  0.16533455018896046
   --- Bin03              SolvGNNGH  85.90561224489795
-    --- MAE                GNNGH_T  0.14052598003861497
-  --- Bin03                GNNGH_T  89.28571428571429
+    --- MAE                GNNGH_T  0.1317311208141085
+  --- Bin03                GNNGH_T  89.73214285714286

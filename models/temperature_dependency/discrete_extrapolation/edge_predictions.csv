@@ -1,78 +1,78 @@
-Solvent_SMILES,Solute_SMILES,Solvent_name,Solute_name,T,key_class,SolvGNNGH,GNNGH_T
-O=C1CSCCO1,c1ccccc1,"1,4-OXATHIAN-2-ONE",BENZENE,30,Oxathianes_Benzene and substituted derivatives,1.338799,1.080056906
-O=C1CSCCO1,CCCCCC,"1,4-OXATHIAN-2-ONE",HEXANE,30,Oxathianes_Saturated hydrocarbons,4.2246966,4.064571381
-C=C(C)CC,COC(C)(C)C,"1-BUTENE, 2-METHYL","ETHER, TERT.BUTYL METHYL",89.7,Unsaturated hydrocarbons_Organooxygen compounds,-0.006370734,-0.036047161
-O=CC1=CCCCC1,C=CCCCC,1-CYCLOHEXENE-1-CARBOXALDEHYDE,1-HEXENE,30,Organic oxides_Unsaturated hydrocarbons,1.0488933,0.836245358
-O=CC1=CCCCC1,c1ccccc1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,BENZENE,30,Organic oxides_Benzene and substituted derivatives,-0.17513682,-0.051022567
-O=CC1=CCCCC1,C1CCCCC1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,CYCLOHEXANE,30,Organic oxides_Saturated hydrocarbons,0.9774452,0.910162032
-O=CC1=CCCCC1,C1=CCCCC1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,CYCLOHEXENE,30,Organic oxides_Unsaturated hydrocarbons,0.50532657,0.480096012
-O=CC1=CCCCC1,CCCCCC,1-CYCLOHEXENE-1-CARBOXALDEHYDE,HEXANE,30,Organic oxides_Saturated hydrocarbons,1.6453949,1.193825603
-CCCCCCCCO,CC(C)COCC(C)C,1-OCTANOL,"ETHER, DIISOBUTYL",25,Fatty Acyls_Organooxygen compounds,0.47772247,0.588294327
-COC(=O)n1cccc1,c1ccccc1,"1-PYRROLECARBOXYLIC ACID, METHYL ESTER",BENZENE,30,Pyrroles_Benzene and substituted derivatives,0.37713107,0.196077541
-OCCNCCO,CCCCCCCCCCCCCCCC,"AMINE, DIETHYL-2,2'-DIHYDROXY",HEXADECANE,135.2,Organonitrogen compounds_Saturated hydrocarbons,6.8438535,6.916929722
-CCNc1ccccc1,O,"ANILINE, N-ETHYL",WATER,90,Organonitrogen compounds_Homogeneous other non-metal compounds,1.2520162,1.595443249
-CCC1CCCCC1,O,"CYCLOHEXANE, ETHYL",WATER,37.8,Saturated hydrocarbons_Homogeneous other non-metal compounds,6.9469647,6.580475807
-CCC1CCCC1c1ccccc1,O,"CYCLOPENTANE, 1-ETHYL, 2-PHENYL",WATER,10,Benzene and substituted derivatives_Homogeneous other non-metal compounds,6.986199,6.611777306
-CCOC(C)(C)CC,CCO,"ETHER, ETHYL TERT.PENTYL",ETHANOL,89.7,Organooxygen compounds_Organooxygen compounds,1.1368419,1.327651858
-CCOC(C)(C)CC,CCC(C)(C)OC,"ETHER, ETHYL TERT.PENTYL","ETHER, METHYL TERT.PENTYL",89.6,Organooxygen compounds_Organooxygen compounds,0.15077816,0.049664274
-NC=O,CC(=O)CCCCC(C)C,"FORMIC ACID, AMIDE","2-OCTANONE, 7-METHYL",50,Carboximidic acids and derivatives_Organooxygen compounds,4.704309,4.693685532
-CCCCCCC,N#CCCOCCC#N,HEPTANE,"PROPANOIC ACID, 3,3'-OXYDI, DINITRILE",25,Saturated hydrocarbons_Organonitrogen compounds,5.60064,6.827813148
-CCCCCCCCCCCCCCCC,CC(C)COCC(C)C,HEXADECANE,"ETHER, DIISOBUTYL",25,Saturated hydrocarbons_Organooxygen compounds,0.33417696,0.254869312
-CO,CC(C)(C)Br,METHANOL,"PROPANE, 2-BROMO-2-METHYL",24.9,Organooxygen compounds_Organobromides,2.5240457,2.63690424
-CCCCCCCCCCCCCCCCCC,Fc1ccc(F)c(F)c1F,OCTADECANE,"BENZENE, 1,2,3,4-TETRAFLUORO",50,Saturated hydrocarbons_Benzene and substituted derivatives,0.5631974,0.432638645
-CC1C=CC(=O)O1,c1ccccc1,"PENTANOIC ACID, 4-HYDROXY, GAMMA-LACTONE",BENZENE,30,Dihydrofurans_Benzene and substituted derivatives,0.8470112,0.626440644
-CC1C=CC(=O)O1,CCCCCC,"PENTANOIC ACID, 4-HYDROXY, GAMMA-LACTONE",HEXANE,30,Dihydrofurans_Saturated hydrocarbons,2.8696904,3.154180765
-CCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCC,CCCCC(CC)CCC(C)O,"PHTHALIC ACID, DIOCTYL ESTER","2-NONANOL, 5-ETHYL",90,Benzene and substituted derivatives_Fatty Acyls,0.47261983,0.429487705
-CCCCOC(=O)c1c(Cl)c(Cl)c(Cl)c(Cl)c1C(=O)OCCCC,Cc1ccc(C)s1,"PHTHALIC ACID, TETRACHLORO, DIBUTYL ESTER","THIOPHENE, 2,5-DIMETHYL",80.3,Benzene and substituted derivatives_Thiophenes,-0.8569532,-0.607189178
-CCCCOC(=O)c1c(Cl)c(Cl)c(Cl)c(Cl)c1C(=O)OCCCC,Clc1cccs1,"PHTHALIC ACID, TETRACHLORO, DIBUTYL ESTER","THIOPHENE, 2-CHLORO",80.3,Benzene and substituted derivatives_Aryl halides,-1.0490628,-1.313705683
-N#CCCOCC(COCCC#N)OCCC#N,CC(=O)OC1CC(C)CCC1C(C)C,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE","ACETIC ACID, 5-METHYL-2-(1-METHYLETHYL) CYCLOHEXYL ESTER",100,Glycerolipids_Prenol lipids,2.5145566,2.54574132
-N#CCCOCC(COCCC#N)OCCC#N,CC(CCC=C(C)C)CC=O,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE",CITRONELLAL,100,Glycerolipids_Prenol lipids,2.437699,2.115595341
-N#CCCOCC(COCCC#N)OCCC#N,CCC(=O)OC1CCC(C(C)(C)CC(C)C)CC1,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE","PROPANOIC ACID, 4-(1,1,3-TRIMETHYLBUTYL) CYCLOHEXYL ESTER",140,Glycerolipids_Carboxylic acids and derivatives,2.9824197,3.088694334
-Cc1cc(C)nc(C)c1,O,"PYRIDINE, 2,4,6-TRIMETHYL",WATER,80,Pyridines and derivatives_Homogeneous other non-metal compounds,0.96276516,1.575385094
-Cc1cccc(C)n1,C1COCCO1,"PYRIDINE, 2,6-DIMETHYL","1,4-DIOXANE",25,Pyridines and derivatives_Dioxanes,0.0020607,0.073216036
-Cc1cccc(C)n1,CCC(C)=O,"PYRIDINE, 2,6-DIMETHYL",2-BUTANONE,25,Pyridines and derivatives_Organooxygen compounds,-0.017477464,-0.05958581
-Cc1cccc(C)n1,CCO,"PYRIDINE, 2,6-DIMETHYL",ETHANOL,25,Pyridines and derivatives_Organooxygen compounds,-0.28489977,0.19798851
-Cc1cccc(C)n1,C[N+](=O)[O-],"PYRIDINE, 2,6-DIMETHYL","METHANE, NITRO",25,"Pyridines and derivatives_Allyl-type 1,3-dipolar organic compounds",0.3537293,0.460154235
-Cc1cccc(C)n1,CCCCCCCC,"PYRIDINE, 2,6-DIMETHYL",OCTANE,25,Pyridines and derivatives_Saturated hydrocarbons,1.2537574,1.449952364
-Cc1cccc(C)n1,Cc1ccccc1,"PYRIDINE, 2,6-DIMETHYL",TOLUENE,25,Pyridines and derivatives_Benzene and substituted derivatives,0.18880595,-0.018467603
-CC(C)CCCC(C)CCCC(C)CCCCC(C)CCCC(C)CCCC(C)C,Cc1ccc(C)s1,"SQUALENE, PERHYDRO","THIOPHENE, 2,5-DIMETHYL",80.3,Prenol lipids_Thiophenes,-0.45931286,-0.501612425
-CC(C)CCCC(C)CCCC(C)CCCCC(C)CCCC(C)CCCC(C)C,Clc1cccs1,"SQUALENE, PERHYDRO","THIOPHENE, 2-CHLORO",80.3,Prenol lipids_Aryl halides,-0.612197,-0.592299581
-O,CCCCCCC(C)(OC)C(O)CC(O)c1ccccc1,WATER,"1,3-DECANEDIOL, 4-METHOXY-4-METHYL-1-PHENYL",25,Homogeneous other non-metal compounds_Fatty Acyls,9.88866,10.14936066
-O,CCCCCC(O)C(CO)CCCC,WATER,"1,3-OCTANEDIOL, 2-BUTYL",25,Homogeneous other non-metal compounds_Fatty Acyls,8.466189,8.617511749
-O,C#CCCCC#C,WATER,"1,6-HEPTADIYNE",25,Homogeneous other non-metal compounds_NA,8.015976,8.817815781
-O,CCCCCCCCCCCCCCCCCCO,WATER,1-OCTADECANOL,65,Homogeneous other non-metal compounds_Fatty Acyls,14.396336,15.17420101
-O,CCCCCCC(C)(O)C(C)O,WATER,"2,3-NONANEDIOL, 3-METHYL",25,Homogeneous other non-metal compounds_Fatty Acyls,6.7984233,7.47781086
-O,CC=CCO,WATER,2-BUTEN-1-OL,25,Homogeneous other non-metal compounds_Organooxygen compounds,3.4805703,4.189653397
-O,CC=CCCCC,WATER,2-HEPTENE,25,Homogeneous other non-metal compounds_Unsaturated hydrocarbons,12.839678,12.45442772
-O,CCCCCCC(C)(OC)C(O)CC(O)C(C)(C)C,WATER,"3,5-DODECANEDIOL, 6-METHOXY-2,2,6-TRIMETHYL",25,Homogeneous other non-metal compounds_Fatty Acyls,9.982205,9.810079575
-O,CC(C)=CCCC(C)=CC(O)C(C)(C)CO,WATER,"4,8-DECADIENE-1,3-DIOL, 2,2,5,9-TETRAMETHYL",25,Homogeneous other non-metal compounds_Prenol lipids,8.953323,8.302927971
-O,CCC(C)C(O)C(C)CC,WATER,"4-HEPTANOL, 3,5-DIMETHYL",15,Homogeneous other non-metal compounds_Organooxygen compounds,9.258571,7.594349861
-O,CCC(C)C(O)C(C)CC,WATER,"4-HEPTANOL, 3,5-DIMETHYL",15,Homogeneous other non-metal compounds_Organooxygen compounds,9.258571,7.594349861
-O,CC/C=C\C/C=C\C/C=C\CCCCCCCC(=O)OC,WATER,"9,12,15-OCTADECATRIENOIC ACID(CIS, CIS, CIS), METHYL ESTER",25,Homogeneous other non-metal compounds_Fatty Acyls,18.322191,19.15962601
-O,c1cc2c3c(cccc3c1)CC2,WATER,"ACENAPHTHYLENE, 1,2-DIHYDRO",25,Homogeneous other non-metal compounds_Naphthalenes,16.442556,14.75687218
-O,O=CCc1ccccc1,WATER,"ACETALDEHYDE, PHENYL",100,Homogeneous other non-metal compounds_Benzene and substituted derivatives,6.372414,6.234385967
-O,COc1c(Cl)c(Cl)c(Cl)c(Cl)c1OC,WATER,"BENZENE, 1,2,3,4-TETRACHLORO-5,6-DIMETHOXY",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,13.580448,13.1614399
-O,Brc1ccccc1Br,WATER,"BENZENE, 1,2-DIBROMO",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.410662,11.94018459
-O,COc1cc(Cl)c(Cl)cc1OC,WATER,"BENZENE, 1,2-DICHLORO-4,5-DIMETHOXY",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,11.352933,12.53410339
-O,O=[N+]([O-])c1ccc([N+](=O)[O-])cc1,WATER,"BENZENE, 1,4-DINITRO",35,Homogeneous other non-metal compounds_Benzene and substituted derivatives,8.756836,9.370845795
-O,Clc1ccccc1I,WATER,"BENZENE, 1-CHLORO-2-IODO",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.411257,11.6939497
-O,Clc1cccc(I)c1,WATER,"BENZENE, 1-CHLORO-3-IODO",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.242456,11.56553936
-O,CC(C)Cc1ccccc1,WATER,"BENZENE, ISOBUTYL",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.733242,12.66012192
-O,CCC(C)C=O,WATER,"BUTANAL, 2-METHYL",98.6,Homogeneous other non-metal compounds_Organooxygen compounds,6.258554,6.448368073
-O,CC(C)CC=O,WATER,"BUTANAL, 3-METHYL",98.6,Homogeneous other non-metal compounds_Organooxygen compounds,6.4086843,5.853877544
-O,COC(=O)CC(C)=O,WATER,"BUTANOIC ACID, 3-OXO-, METHYL ESTER",30,Homogeneous other non-metal compounds_Keto acids and derivatives,3.16088,3.158489704
-O,CCCCCCCC/C=C\CCCCCCCCCCCC(=O)OC,WATER,"CIS-13-DOCOSENOIC ACID, METHYL ESTER",25,Homogeneous other non-metal compounds_Fatty Acyls,23.144812,23.30925369
-O,CC1CCCC(C)(C)C1,WATER,"CYCLOHEXANE, 1,1,3-TRIMETHYL",25,Homogeneous other non-metal compounds_Saturated hydrocarbons,13.590436,13.71690273
-O,C=CC1CC=CCC1,WATER,"CYCLOHEXENE, 4-VINYL",25,Homogeneous other non-metal compounds_Unsaturated hydrocarbons,10.982562,11.53694916
-O,CCCCCC1CCCC1,WATER,"CYCLOPENTANE, PENTYL",25,Homogeneous other non-metal compounds_Saturated hydrocarbons,17.688055,19.91413116
-O,CCOC(=O)CCCCCCCCC(=O)OCC,WATER,"DECANEDIOIC ACID, DIETHYL ESTER",20,Homogeneous other non-metal compounds_Fatty Acyls,11.97093,11.82712555
-O,CCOCCOC(C)(C)C,WATER,"ETHYLENE GLYCOL, ETHYL TERT.BUTYL ETHER",80,Homogeneous other non-metal compounds_Organooxygen compounds,7.493563,7.036635399
-O,CCOCCOC(C)(C)C,WATER,"ETHYLENE GLYCOL, ETHYL TERT.BUTYL ETHER",80,Homogeneous other non-metal compounds_Organooxygen compounds,7.493563,7.036635399
-O,CCCCCCCCC(=O)OCC,WATER,"NONANOIC ACID, ETHYL ESTER",20,Homogeneous other non-metal compounds_Fatty Acyls,11.084257,11.06134987
-O,CCCCC(C)CCC,WATER,"OCTANE, 4-METHYL",25,Homogeneous other non-metal compounds_Saturated hydrocarbons,15.64221,15.22582722
-O,CCCc1ccc(O)cc1,WATER,"PHENOL, 4-PROPYL",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,8.410143,8.62997818
-O,CCCCCCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCCCCCC,WATER,"PHTHALIC ACID, DIDODECYL ESTER",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,16.22224,15.08964062
-O,CCCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCCC,WATER,"PHTHALIC ACID, DINONYL ESTER",25,Homogeneous other non-metal compounds_Benzene and substituted derivatives,14.63535,13.47364521
-O,CCCOC(=O)c1ccccc1C(=O)OCCC,WATER,"PHTHALIC ACID, DIPROPYL ESTER",20,Homogeneous other non-metal compounds_Benzene and substituted derivatives,11.303445,11.98456573
-O,CCCCCN(CCCCC)C(=O)CC,WATER,"PROPANOIC ACID, AMIDE, N,N-DIPENTYL",25,Homogeneous other non-metal compounds_Carboxylic acids and derivatives,9.480309,9.98226738
-O,CCCCCCCCCCCCCC(=O)OC,WATER,"TETRADECANOIC ACID, METHYL ESTER",25,Homogeneous other non-metal compounds_Fatty Acyls,19.573118,20.12797165
+Solvent_SMILES,Solute_SMILES,Solvent_name,Solute_name,T,log-gamma,key_class,SolvGNNGH,GNNGH_T
+O=C1CSCCO1,c1ccccc1,"1,4-OXATHIAN-2-ONE",BENZENE,30.0,1.211940974,Oxathianes_Benzene and substituted derivatives,1.338799,0.8724808096885681
+O=C1CSCCO1,CCCCCC,"1,4-OXATHIAN-2-ONE",HEXANE,30.0,3.985273467,Oxathianes_Saturated hydrocarbons,4.2246966,3.963594913482666
+C=C(C)CC,COC(C)(C)C,"1-BUTENE, 2-METHYL","ETHER, TERT.BUTYL METHYL",89.7,0.029558802,Unsaturated hydrocarbons_Organooxygen compounds,-0.0063707344,-0.1161002516746521
+O=CC1=CCCCC1,C=CCCCC,1-CYCLOHEXENE-1-CARBOXALDEHYDE,1-HEXENE,30.0,1.026041596,Organic oxides_Unsaturated hydrocarbons,1.0488933,0.7730216979980469
+O=CC1=CCCCC1,c1ccccc1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,BENZENE,30.0,-0.040821995,Organic oxides_Benzene and substituted derivatives,-0.17513682,-0.0437254235148429
+O=CC1=CCCCC1,C1CCCCC1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,CYCLOHEXANE,30.0,1.085189268,Organic oxides_Saturated hydrocarbons,0.9774452,0.8270037174224854
+O=CC1=CCCCC1,C1=CCCCC1,1-CYCLOHEXENE-1-CARBOXALDEHYDE,CYCLOHEXENE,30.0,0.683096845,Organic oxides_Unsaturated hydrocarbons,0.50532657,0.474502682685852
+O=CC1=CCCCC1,CCCCCC,1-CYCLOHEXENE-1-CARBOXALDEHYDE,HEXANE,30.0,1.413423029,Organic oxides_Saturated hydrocarbons,1.6453949,1.0756537914276123
+CCCCCCCCO,CC(C)COCC(C)C,1-OCTANOL,"ETHER, DIISOBUTYL",25.0,1.187843422,Fatty Acyls_Organooxygen compounds,0.47772247,0.7731581330299377
+COC(=O)n1cccc1,c1ccccc1,"1-PYRROLECARBOXYLIC ACID, METHYL ESTER",BENZENE,30.0,0.710408277,Pyrroles_Benzene and substituted derivatives,0.37713107,0.6142033338546753
+OCCNCCO,CCCCCCCCCCCCCCCC,"AMINE, DIETHYL-2,2'-DIHYDROXY",HEXADECANE,135.2,7.032182857,Organonitrogen compounds_Saturated hydrocarbons,6.8438535,7.192676067352295
+CCNc1ccccc1,O,"ANILINE, N-ETHYL",WATER,90.0,7.042897873,Organonitrogen compounds_Homogeneous other non-metal compounds,1.2520162,2.559779644012451
+CCC1CCCCC1,O,"CYCLOHEXANE, ETHYL",WATER,37.8,7.11850231,Saturated hydrocarbons_Homogeneous other non-metal compounds,6.9469647,6.802036285400391
+CCC1CCCC1c1ccccc1,O,"CYCLOPENTANE, 1-ETHYL, 2-PHENYL",WATER,10.0,6.912145627,Benzene and substituted derivatives_Homogeneous other non-metal compounds,6.986199,7.029446601867676
+CCOC(C)(C)CC,CCO,"ETHER, ETHYL TERT.PENTYL",ETHANOL,89.7,1.358409158,Organooxygen compounds_Organooxygen compounds,1.1368419,1.0186604261398315
+CCOC(C)(C)CC,CCC(C)(C)OC,"ETHER, ETHYL TERT.PENTYL","ETHER, METHYL TERT.PENTYL",89.6,0.009950331,Organooxygen compounds_Organooxygen compounds,0.15077816,-0.1367639899253845
+NC=O,CC(=O)CCCCC(C)C,"FORMIC ACID, AMIDE","2-OCTANONE, 7-METHYL",50.0,4.836281907,Carboximidic acids and derivatives_Organooxygen compounds,4.704309,4.772476673126221
+CCCCCCC,N#CCCOCCC#N,HEPTANE,"PROPANOIC ACID, 3,3'-OXYDI, DINITRILE",25.0,7.121817722,Saturated hydrocarbons_Organonitrogen compounds,5.60064,6.121337890625
+CCCCCCCCCCCCCCCC,CC(C)COCC(C)C,HEXADECANE,"ETHER, DIISOBUTYL",25.0,0.371563556,Saturated hydrocarbons_Organooxygen compounds,0.33417696,0.1506823599338531
+CO,CC(C)(C)Br,METHANOL,"PROPANE, 2-BROMO-2-METHYL",24.9,2.564949357,Organooxygen compounds_Organobromides,2.5240457,2.278249740600586
+CCCCCCCCCCCCCCCCCC,Fc1ccc(F)c(F)c1F,OCTADECANE,"BENZENE, 1,2,3,4-TETRAFLUORO",50.0,0.647103242,Saturated hydrocarbons_Benzene and substituted derivatives,0.5631974,0.5740073919296265
+CC1C=CC(=O)O1,c1ccccc1,"PENTANOIC ACID, 4-HYDROXY, GAMMA-LACTONE",BENZENE,30.0,0.350656872,Dihydrofurans_Benzene and substituted derivatives,0.8470112,0.8915475606918335
+CC1C=CC(=O)O1,CCCCCC,"PENTANOIC ACID, 4-HYDROXY, GAMMA-LACTONE",HEXANE,30.0,2.797281335,Dihydrofurans_Saturated hydrocarbons,2.8696904,3.1949567794799805
+CCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCC,CCCCC(CC)CCC(C)O,"PHTHALIC ACID, DIOCTYL ESTER","2-NONANOL, 5-ETHYL",90.0,0.717839793,Benzene and substituted derivatives_Fatty Acyls,0.47261983,0.2048186659812927
+CCCCOC(=O)c1c(Cl)c(Cl)c(Cl)c(Cl)c1C(=O)OCCCC,Cc1ccc(C)s1,"PHTHALIC ACID, TETRACHLORO, DIBUTYL ESTER","THIOPHENE, 2,5-DIMETHYL",80.3,-0.733969175,Benzene and substituted derivatives_Thiophenes,-0.8569532,-0.6089537143707275
+CCCCOC(=O)c1c(Cl)c(Cl)c(Cl)c(Cl)c1C(=O)OCCCC,Clc1cccs1,"PHTHALIC ACID, TETRACHLORO, DIBUTYL ESTER","THIOPHENE, 2-CHLORO",80.3,-0.967584026,Benzene and substituted derivatives_Aryl halides,-1.0490628,-1.1292626857757568
+N#CCCOCC(COCCC#N)OCCC#N,CC(=O)OC1CC(C)CCC1C(C)C,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE","ACETIC ACID, 5-METHYL-2-(1-METHYLETHYL) CYCLOHEXYL ESTER",100.0,2.48490665,Glycerolipids_Prenol lipids,2.5145566,2.0142621994018555
+N#CCCOCC(COCCC#N)OCCC#N,CC(CCC=C(C)C)CC=O,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE",CITRONELLAL,100.0,1.945910149,Glycerolipids_Prenol lipids,2.437699,1.961188554763794
+N#CCCOCC(COCCC#N)OCCC#N,CCC(=O)OC1CCC(C(C)(C)CC(C)C)CC1,"PROPANOIC ACID, 3,3',3''-(1,2,3-PROPANETRIYLTRIOXY)TRI, NITRILE","PROPANOIC ACID, 4-(1,1,3-TRIMETHYLBUTYL) CYCLOHEXYL ESTER",140.0,3.044522438,Glycerolipids_Carboxylic acids and derivatives,2.9824197,3.017883777618408
+Cc1cc(C)nc(C)c1,O,"PYRIDINE, 2,4,6-TRIMETHYL",WATER,80.0,1.181727195,Pyridines and derivatives_Homogeneous other non-metal compounds,0.96276516,0.971737265586853
+Cc1cccc(C)n1,C1COCCO1,"PYRIDINE, 2,6-DIMETHYL","1,4-DIOXANE",25.0,0.019802627,Pyridines and derivatives_Dioxanes,0.0020607002,0.072960652410984
+Cc1cccc(C)n1,CCC(C)=O,"PYRIDINE, 2,6-DIMETHYL",2-BUTANONE,25.0,0.019802627,Pyridines and derivatives_Organooxygen compounds,-0.017477464,0.0508108437061309
+Cc1cccc(C)n1,CCO,"PYRIDINE, 2,6-DIMETHYL",ETHANOL,25.0,-0.328504067,Pyridines and derivatives_Organooxygen compounds,-0.28489977,-0.1801981925964355
+Cc1cccc(C)n1,C[N+](=O)[O-],"PYRIDINE, 2,6-DIMETHYL","METHANE, NITRO",25.0,0.548121409,"Pyridines and derivatives_Allyl-type 1,3-dipolar organic compounds",0.3537293,0.123610645532608
+Cc1cccc(C)n1,CCCCCCCC,"PYRIDINE, 2,6-DIMETHYL",OCTANE,25.0,0.955511445,Pyridines and derivatives_Saturated hydrocarbons,1.2537574,1.336374044418335
+Cc1cccc(C)n1,Cc1ccccc1,"PYRIDINE, 2,6-DIMETHYL",TOLUENE,25.0,-0.105360516,Pyridines and derivatives_Benzene and substituted derivatives,0.18880595,0.0896346718072891
+CC(C)CCCC(C)CCCC(C)CCCCC(C)CCCC(C)CCCC(C)C,Cc1ccc(C)s1,"SQUALENE, PERHYDRO","THIOPHENE, 2,5-DIMETHYL",80.3,-0.385662481,Prenol lipids_Thiophenes,-0.45931286,-0.3764489293098449
+CC(C)CCCC(C)CCCC(C)CCCCC(C)CCCC(C)CCCC(C)C,Clc1cccs1,"SQUALENE, PERHYDRO","THIOPHENE, 2-CHLORO",80.3,-0.544727175,Prenol lipids_Aryl halides,-0.612197,-0.6227402687072754
+O,CCCCCCC(C)(OC)C(O)CC(O)c1ccccc1,WATER,"1,3-DECANEDIOL, 4-METHOXY-4-METHYL-1-PHENYL",25.0,10.77960191,Homogeneous other non-metal compounds_Fatty Acyls,9.88866,9.306456565856934
+O,CCCCCC(O)C(CO)CCCC,WATER,"1,3-OCTANEDIOL, 2-BUTYL",25.0,9.533353436,Homogeneous other non-metal compounds_Fatty Acyls,8.466189,8.112089157104492
+O,C#CCCCC#C,WATER,"1,6-HEPTADIYNE",25.0,8.039415422,Homogeneous other non-metal compounds_NA,8.015976,9.20355987548828
+O,CCCCCCCCCCCCCCCCCCO,WATER,1-OCTADECANOL,65.0,21.64871451,Homogeneous other non-metal compounds_Fatty Acyls,14.396336,16.693098068237305
+O,CCCCCCC(C)(O)C(C)O,WATER,"2,3-NONANEDIOL, 3-METHYL",25.0,7.504501685,Homogeneous other non-metal compounds_Fatty Acyls,6.7984233,7.245352745056152
+O,CC=CCO,WATER,2-BUTEN-1-OL,25.0,3.295836866,Homogeneous other non-metal compounds_Organooxygen compounds,3.4805703,3.1583080291748047
+O,CC=CCCCC,WATER,2-HEPTENE,25.0,12.80391965,Homogeneous other non-metal compounds_Unsaturated hydrocarbons,12.839678,13.093311309814451
+O,CCCCCCC(C)(OC)C(O)CC(O)C(C)(C)C,WATER,"3,5-DODECANEDIOL, 6-METHOXY-2,2,6-TRIMETHYL",25.0,10.54707677,Homogeneous other non-metal compounds_Fatty Acyls,9.982205,10.210954666137695
+O,CC(C)=CCCC(C)=CC(O)C(C)(C)CO,WATER,"4,8-DECADIENE-1,3-DIOL, 2,2,5,9-TETRAMETHYL",25.0,7.430054825,Homogeneous other non-metal compounds_Prenol lipids,8.953323,9.20107364654541
+O,CCC(C)C(O)C(C)CC,WATER,"4-HEPTANOL, 3,5-DIMETHYL",15.0,9.31551087,Homogeneous other non-metal compounds_Organooxygen compounds,9.258571,8.824036598205566
+O,CCC(C)C(O)C(C)CC,WATER,"4-HEPTANOL, 3,5-DIMETHYL",15.0,9.31551087,Homogeneous other non-metal compounds_Organooxygen compounds,9.258571,8.824036598205566
+O,CC/C=C\C/C=C\C/C=C\CCCCCCCC(=O)OC,WATER,"9,12,15-OCTADECATRIENOIC ACID(CIS, CIS, CIS), METHYL ESTER",25.0,18.98599455,Homogeneous other non-metal compounds_Fatty Acyls,18.322191,19.534143447875977
+O,c1cc2c3c(cccc3c1)CC2,WATER,"ACENAPHTHYLENE, 1,2-DIHYDRO",25.0,12.95984445,Homogeneous other non-metal compounds_Naphthalenes,16.442556,14.341423988342283
+O,O=CCc1ccccc1,WATER,"ACETALDEHYDE, PHENYL",100.0,5.386230118,Homogeneous other non-metal compounds_Benzene and substituted derivatives,6.372414,6.192551136016846
+O,COc1c(Cl)c(Cl)c(Cl)c(Cl)c1OC,WATER,"BENZENE, 1,2,3,4-TETRACHLORO-5,6-DIMETHOXY",25.0,14.57116294,Homogeneous other non-metal compounds_Benzene and substituted derivatives,13.580448,13.77228546142578
+O,Brc1ccccc1Br,WATER,"BENZENE, 1,2-DIBROMO",25.0,12.06681058,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.410662,12.019793510437012
+O,COc1cc(Cl)c(Cl)cc1OC,WATER,"BENZENE, 1,2-DICHLORO-4,5-DIMETHOXY",25.0,10.62157122,Homogeneous other non-metal compounds_Benzene and substituted derivatives,11.352933,11.410429954528809
+O,O=[N+]([O-])c1ccc([N+](=O)[O-])cc1,WATER,"BENZENE, 1,4-DINITRO",35.0,11.40228436,Homogeneous other non-metal compounds_Benzene and substituted derivatives,8.756836,9.173297882080078
+O,Clc1ccccc1I,WATER,"BENZENE, 1-CHLORO-2-IODO",25.0,12.16002871,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.411257,12.187541007995604
+O,Clc1cccc(I)c1,WATER,"BENZENE, 1-CHLORO-3-IODO",25.0,12.18075484,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.242456,12.090801239013672
+O,CC(C)Cc1ccccc1,WATER,"BENZENE, ISOBUTYL",25.0,13.51034317,Homogeneous other non-metal compounds_Benzene and substituted derivatives,12.733242,12.696430206298828
+O,CCC(C)C=O,WATER,"BUTANAL, 2-METHYL",98.6,3.815512105,Homogeneous other non-metal compounds_Organooxygen compounds,6.258554,5.886130332946777
+O,CC(C)CC=O,WATER,"BUTANAL, 3-METHYL",98.6,3.837299459,Homogeneous other non-metal compounds_Organooxygen compounds,6.4086843,6.018650054931641
+O,COC(=O)CC(C)=O,WATER,"BUTANOIC ACID, 3-OXO-, METHYL ESTER",30.0,3.27336401,Homogeneous other non-metal compounds_Keto acids and derivatives,3.16088,3.304253101348877
+O,CCCCCCCC/C=C\CCCCCCCCCCCC(=O)OC,WATER,"CIS-13-DOCOSENOIC ACID, METHYL ESTER",25.0,27.41286511,Homogeneous other non-metal compounds_Fatty Acyls,23.144812,24.2740478515625
+O,CC1CCCC(C)(C)C1,WATER,"CYCLOHEXANE, 1,1,3-TRIMETHYL",25.0,15.19175458,Homogeneous other non-metal compounds_Saturated hydrocarbons,13.590436,15.388866424560549
+O,C=CC1CC=CCC1,WATER,"CYCLOHEXENE, 4-VINYL",25.0,11.6956636,Homogeneous other non-metal compounds_Unsaturated hydrocarbons,10.982562,10.907641410827637
+O,CCCCCC1CCCC1,WATER,"CYCLOPENTANE, PENTYL",25.0,18.03059674,Homogeneous other non-metal compounds_Saturated hydrocarbons,17.688055,18.312822341918945
+O,CCOC(=O)CCCCCCCCC(=O)OCC,WATER,"DECANEDIOIC ACID, DIETHYL ESTER",20.0,12.09514108,Homogeneous other non-metal compounds_Fatty Acyls,11.97093,11.365326881408691
+O,CCOCCOC(C)(C)C,WATER,"ETHYLENE GLYCOL, ETHYL TERT.BUTYL ETHER",80.0,6.91274282,Homogeneous other non-metal compounds_Organooxygen compounds,7.493563,8.233437538146973
+O,CCOCCOC(C)(C)C,WATER,"ETHYLENE GLYCOL, ETHYL TERT.BUTYL ETHER",80.0,6.91274282,Homogeneous other non-metal compounds_Organooxygen compounds,7.493563,8.233437538146973
+O,CCCCCCCCC(=O)OCC,WATER,"NONANOIC ACID, ETHYL ESTER",20.0,12.7512997,Homogeneous other non-metal compounds_Fatty Acyls,11.084257,11.001076698303224
+O,CCCCC(C)CCC,WATER,"OCTANE, 4-METHYL",25.0,17.94103074,Homogeneous other non-metal compounds_Saturated hydrocarbons,15.64221,14.992842674255373
+O,CCCc1ccc(O)cc1,WATER,"PHENOL, 4-PROPYL",25.0,8.682843214,Homogeneous other non-metal compounds_Benzene and substituted derivatives,8.410143,9.152956008911133
+O,CCCCCCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCCCCCC,WATER,"PHTHALIC ACID, DIDODECYL ESTER",25.0,10.59225013,Homogeneous other non-metal compounds_Benzene and substituted derivatives,16.22224,22.161836624145508
+O,CCCCCCCCCOC(=O)c1ccccc1C(=O)OCCCCCCCCC,WATER,"PHTHALIC ACID, DINONYL ESTER",25.0,11.66255164,Homogeneous other non-metal compounds_Benzene and substituted derivatives,14.63535,18.909473419189453
+O,CCCOC(=O)c1ccccc1C(=O)OCCC,WATER,"PHTHALIC ACID, DIPROPYL ESTER",20.0,11.75978554,Homogeneous other non-metal compounds_Benzene and substituted derivatives,11.303445,12.123760223388672
+O,CCCCCN(CCCCC)C(=O)CC,WATER,"PROPANOIC ACID, AMIDE, N,N-DIPENTYL",25.0,9.378647517,Homogeneous other non-metal compounds_Carboxylic acids and derivatives,9.480309,9.5479736328125
+O,CCCCCCCCCCCCCC(=O)OC,WATER,"TETRADECANOIC ACID, METHYL ESTER",25.0,19.32489889,Homogeneous other non-metal compounds_Fatty Acyls,19.573118,19.07539939880371
