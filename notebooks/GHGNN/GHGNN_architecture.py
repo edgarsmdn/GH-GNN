@@ -175,10 +175,10 @@ class GHGNN_model(nn.Module):
         self.mlp2b = nn.Linear(hidden_dim, hidden_dim)
         self.mlp3b = nn.Linear(hidden_dim, 1)
         
-        # MLP for C
-        self.mlp1c = nn.Linear(hidden_dim*4, hidden_dim)
-        self.mlp2c = nn.Linear(hidden_dim, hidden_dim)
-        self.mlp3c = nn.Linear(hidden_dim, 1)
+        # # MLP for C
+        # self.mlp1c = nn.Linear(hidden_dim*4, hidden_dim)
+        # self.mlp2c = nn.Linear(hidden_dim, hidden_dim)
+        # self.mlp3c = nn.Linear(hidden_dim, 1)
         
         
     def generate_sys_graph(self, x, edge_attr, batch_size, n_mols=2):
@@ -199,7 +199,7 @@ class GHGNN_model(nn.Module):
         sys_graph = Data(x=x, edge_index=edge_index, edge_attr=edge_attr)
         return sys_graph
 
-    def forward(self, solvent, solute, T):
+    def forward(self, solvent, solute, T, scaler=None, ln_gamma=True):
         
         # Molecular descriptors based on MOSCED model
         
@@ -312,18 +312,68 @@ class GHGNN_model(nn.Module):
         A = F.relu(self.mlp2a(A))
         A = self.mlp3a(A)   
         
+        # A_min = -40
+        # A_max = 55
+        # A = (A-A_min)/(A_max-A_min)
+        
         B = F.relu(self.mlp1b(xg))
         B = F.relu(self.mlp2b(B))
         B = self.mlp3b(B)
         
-        C = F.relu(self.mlp1c(xg*T))
-        C = F.relu(self.mlp2c(C))
-        C = self.mlp3c(C)
+        # B_min = -15000
+        # B_max = 20000
+        # B = (B-B_min)/(B_max-B_min)
         
-        output = A + B/T + C
+        # C = F.relu(self.mlp1c(xg))
+        # C = F.relu(self.mlp2c(C))
+        # C = self.mlp3c(C)
         
+        #output = A + B/T #+ C/(T**2)
         
-        return output    
+        #x = torch.cat([A, B], dim=1)
+        
+        C_norm = A
+        D_norm = B
+        
+        C_min = -2.91058307855874 
+        C_max = 29.1066045841922
+        
+        D_min = -3.97198033957307 
+        D_max = 4.8134735224616
+
+        
+        C = C_norm*(C_max - C_min) + C_min
+        D = D_norm*(D_max - D_min) + D_min
+        
+        T1 = 303.15
+        T2 = 363.15
+        
+        B = D*2*T1*T2/(T2-T1)
+        A = C - B*(T1 + T2)/(2*T1*T2)
+        output = A + B/T
+        return output
+        
+        # if ln_gamma:
+        #     # T = T.reshape(-1,)
+        #     # x = x
+        #     # if scaler != None:
+        #     #     x = scaler.inverse_transform(x)
+                
+        #     # C = x[:,0].reshape(-1,)
+        #     # D = x[:,1].reshape(-1,)
+            
+        #     T1 = 303.15
+        #     T2 = 363.15
+            
+        #     B = D*2*T1*T2/(T2-T1)
+        #     A = C - B*(T1 + T2)/(2*T1*T2)
+            
+        #     # A = x[:,0].reshape(-1,)
+        #     # B = x[:,1].reshape(-1,)
+        #     output = A + B/T
+        #     return output
+        # else:
+        #     return x #output    
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)

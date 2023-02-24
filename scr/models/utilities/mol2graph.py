@@ -278,6 +278,108 @@ def sys2graph(df, mol_column_1, mol_column_2, target, y_scaler=None, single_syst
         graphs_solute.append(graph_solu)
         
     return graphs_solvent, graphs_solute
+
+def sys2graph_MTL(df, mol_column_1, mol_column_2, targets, y_scaler=None, single_system=False):
+    '''
+    Return graphs for solvent and solute with hydrogen-bonding info
+    '''
+    if single_system:
+        solvents = [df[mol_column_1]]
+        solutes = [df[mol_column_2]]
+        ys   = [df[[targets[0], targets[1]]]]
+    else:
+        print('-- Constructing graphs...')
+        solvents = df[mol_column_1].tolist()
+        solutes = df[mol_column_2].tolist()
+        ys   = df[[targets[0], targets[1]]].to_numpy()
+    
+    graphs_solvent, graphs_solute = [], []
+    for y, solv, solu in tqdm(zip(ys, solvents, solutes), total=len(ys)):
+        atoms_solv  = solv.GetAtoms()
+        bonds_solv  = solv.GetBonds()
+        
+        atoms_solu  = solu.GetAtoms()
+        bonds_solu  = solu.GetBonds()
+        
+        # Information on nodes
+        node_f_solv = [atom_features(atom) for atom in atoms_solv]
+        node_f_solu = [atom_features(atom) for atom in atoms_solu]
+        
+        # Information on edges
+        edge_index_solv = get_bond_pair(solv)
+        edge_attr_solv  = []
+        
+        for bond in bonds_solv:
+            edge_attr_solv.append(bond_features(bond))
+            edge_attr_solv.append(bond_features(bond))
+            
+        edge_index_solu = get_bond_pair(solu)
+        edge_attr_solu  = []
+        
+        for bond in bonds_solu:
+            edge_attr_solu.append(bond_features(bond))
+            edge_attr_solu.append(bond_features(bond))
+        
+        # Atomic polarizability
+        calc = APol()
+        ap_solv = calc(solv)
+        ap_solu = calc(solu)
+        
+        # Bond polarizability
+        calc = BPol()
+        bp_solv = calc(solv)
+        bp_solu = calc(solu)
+        
+        # Topological Polar Surface Area
+        calc = TopoPSA()
+        topopsa_solv = calc(solv)
+        topopsa_solu = calc(solu)
+        
+        # Intra hydrogen-bond acidity and basicity
+        hb_solv = min(rdMolDescriptors.CalcNumHBA(solv), rdMolDescriptors.CalcNumHBD(solv))
+        hb_solu = min(rdMolDescriptors.CalcNumHBA(solu), rdMolDescriptors.CalcNumHBD(solu))
+        
+        # Inter hydrogen-bond
+        inter_hb = min(rdMolDescriptors.CalcNumHBA(solv), rdMolDescriptors.CalcNumHBD(solu)) \
+                             + min(rdMolDescriptors.CalcNumHBA(solu),rdMolDescriptors.CalcNumHBD(solv))
+        
+        # Store all information in a graph
+        nodes_info_solv = torch.tensor(np.array(node_f_solv), dtype=torch.float)
+        edges_indx_solv = torch.tensor(np.array(edge_index_solv), dtype=torch.long)
+        edges_info_solv = torch.tensor(np.array(edge_attr_solv), dtype=torch.float)
+        graph_solv = Data(x=nodes_info_solv, edge_index=edges_indx_solv, edge_attr=edges_info_solv,
+                          ap=ap_solv,
+                          bp=bp_solv,
+                          topopsa=topopsa_solv,
+                          hb=hb_solv, 
+                          inter_hb=inter_hb)
+        
+        nodes_info_solu = torch.tensor(np.array(node_f_solu), dtype=torch.float)
+        edges_indx_solu = torch.tensor(np.array(edge_index_solu), dtype=torch.long)
+        edges_info_solu = torch.tensor(np.array(edge_attr_solu), dtype=torch.float)
+        graph_solu = Data(x=nodes_info_solu, edge_index=edges_indx_solu, edge_attr=edges_info_solu,
+                          ap=ap_solu,
+                          bp=bp_solu,
+                          topopsa=topopsa_solu, 
+                          hb=hb_solu, 
+                          inter_hb=inter_hb)
+        
+        if y_scaler != None:
+            y = np.array(y).reshape(-1,2)
+            y = y_scaler.transform(y).astype(np.float32)
+            graph_solv.y = torch.tensor(y, dtype=torch.float)
+            graph_solu.y = torch.tensor(y, dtype=torch.float)
+        else:
+            #y = y.astype(np.float32)
+            y = np.array(y).reshape(-1,2)
+            y = y.astype(np.float32)
+            graph_solv.y = torch.tensor(y, dtype=torch.float)
+            graph_solu.y = torch.tensor(y, dtype=torch.float)
+        
+        graphs_solvent.append(graph_solv)
+        graphs_solute.append(graph_solu)
+        
+    return graphs_solvent, graphs_solute
     
 def get_dummy_graph():
     solv = Chem.MolFromSmiles('[2H]O[2H]')

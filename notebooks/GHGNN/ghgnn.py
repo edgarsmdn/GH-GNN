@@ -164,7 +164,6 @@ class GH_GNN():
                                          map_location=torch.device(available_device)))
         self.device   = torch.device(available_device)
         self.model    = model.to(self.device)
-        self.classyfire_count = 0
         self.first_query = time.time()
         
         self.interpolation = self.check_interpolation(self.solvent, self.solute)
@@ -172,18 +171,10 @@ class GH_GNN():
     def classify_mol(self, mol):
         inchikey = Chem.inchi.MolToInchiKey(mol)
         url = 'http://classyfire.wishartlab.com/entities/' + str(inchikey) + '.json'
-        if self.classyfire_count == 0:
-            self.first_query = time.time()
         
-        if self.classyfire_count >= 12:
-            while time.time() - self.first_query < 60:
-                time.sleep(0.1)
-            self.classyfire_count = 0
         try:
-            self.classyfire_count += 1
             with urllib.request.urlopen(url) as webpage:
-                data = json.loads(webpage.read().decode())
-                
+                data = json.loads(webpage.read().decode())    
             if data['class']['name'] is None:
                 raise Exception()
             return data
@@ -213,6 +204,7 @@ class GH_GNN():
     def indicator_class(self, solvent, solute):
         solute_class = self.classify_mol(solute)
         solvent_class = self.classify_mol(solvent)
+        time.sleep(1)
         
         solute_class = solute_class['class']['name'] if solute_class != None else ''
         solvent_class = solvent_class['class']['name'] if solvent_class != None else ''

@@ -1,7 +1,7 @@
 
- Report for GNNGH_T_epochs_250
+ Report for GH-GNN
 --------------------------------------------------
 ------------------------------
-Training MAE   : 0.07374807
+Training MAE   : 0.054475483
 
-Training time (min): 163.54419595797856
+Training time (min): 72.13569467067718

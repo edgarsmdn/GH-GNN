@@ -27,8 +27,8 @@ def train(model, device, loader, optimizer, task_type, stats, scaler):
       batch_solute  = batch_solute.to(device)
       T = T.to(device)
       if torch.cuda.is_available():
-          with autocast():
-              pred  = model(batch_solvent.cuda(), batch_solute.cuda(), T.cuda())
+          with autocast(enabled=False):
+              pred  = model(batch_solvent.cuda(), batch_solute.cuda(), T.cuda(), scaler=None, ln_gamma=True)
               optimizer.zero_grad()
     
               prediction = pred.to(torch.float32)
@@ -69,6 +69,7 @@ def train(model, device, loader, optimizer, task_type, stats, scaler):
               loss = cls_criterion(prediction, real)
           elif task_type=="regression":
               loss = reg_criterion(prediction, real)
+              
           else:
             ValueError(f'Invalid task_type {task_type}')
           loss.backward()
