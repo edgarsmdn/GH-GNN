@@ -13,6 +13,7 @@ from SolvGNNGH_wo_architecture import SolvGNNGH_wo
 import torch
 import os
 import numpy as np
+from sklearn.metrics import mean_absolute_error as MAE
 
 def pred_SolvGNNGH(df, model_name, hyperparameters):
     path = os.getcwd()
@@ -74,12 +75,12 @@ def pred_SolvGNNGH(df, model_name, hyperparameters):
     return df
 
 
-epochs = [300]
+epochs = [250]
 
 
-hyperparameters_dict = {'hidden_dim'  : 256,
-                        'lr'          : 0.0005474078198480248,
-                        'batch_size'  : 23
+hyperparameters_dict = {'hidden_dim'  : 193,
+                        'lr'          : 0.00011559310094158379,
+                        'batch_size'  : 16
                         }
 
 
@@ -87,7 +88,7 @@ for e in epochs:
     print('-'*50)
     print('Epochs: ', e)
     
-    model_name = 'SolvGNNGH_wo'
+    model_name = 'SolvGNNGH_epochs_'+str(e)
     
     # Models trained on the complete train/validation set
     print('Predicting with SolvGNNGH')
@@ -106,6 +107,8 @@ for e in epochs:
     # --- Predict Brouwer dataset --- #
     ###################################
     
+    model_name = 'SolvGNNGH_epochs_'+str(e)
+    
     # Models trained on the complete train/validation set
     print('Predicting with SolvGNNGH')
     df = pd.read_csv('../../data/processed/brouwer_edge_test.csv')
@@ -119,6 +122,5 @@ for e in epochs:
     df_pred.to_csv(model_name+'/brouwer_extrapolation_pred.csv')
     print('Done!')
     
-
 
 

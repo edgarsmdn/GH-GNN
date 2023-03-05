@@ -2,6 +2,6 @@
  Report for SolvGNNCat
 --------------------------------------------------
 ------------------------------
-Training MAE   : 0.10915611
+Training MAE   : 0.09038437
 
-Training time (min): 190.05620862642925
+Training time (min): 172.73535528580348

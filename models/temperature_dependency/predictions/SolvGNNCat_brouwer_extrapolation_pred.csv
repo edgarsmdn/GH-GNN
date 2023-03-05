@@ -1,4 +1,4 @@
 Solute_SMILES,Solvent_SMILES,log-gamma,T,key_class,SolvGNNCat
-CC1CCCCC1C,CCCCOC(=O)COC(=O)c1ccccc1C(=O)OCCCC,0.819779831,120,Benzene and substituted derivatives_Saturated hydrocarbons,0.5519045
-CC1CCCCC1C,CCCCOC(=O)COC(=O)c1ccccc1C(=O)OCCCC,0.779324877,120,Benzene and substituted derivatives_Saturated hydrocarbons,0.551904321
-COc1ccc(C#N)cc1,CC(=CCCC(=CCCC(=CCCC=C(C)CCC=C(C)CCC=C(C)C)C)C)C,1.208960346,80,Prenol lipids_Benzene and substituted derivatives,0.972297192
+CC1CCCCC1C,CCCCOC(=O)COC(=O)c1ccccc1C(=O)OCCCC,0.819779831,120,Benzene and substituted derivatives_Saturated hydrocarbons,0.374475956
+CC1CCCCC1C,CCCCOC(=O)COC(=O)c1ccccc1C(=O)OCCCC,0.779324877,120,Benzene and substituted derivatives_Saturated hydrocarbons,0.374475896
+COc1ccc(C#N)cc1,CC(=CCCC(=CCCC(=CCCC=C(C)CCC=C(C)CCC=C(C)C)C)C)C,1.208960346,80,Prenol lipids_Benzene and substituted derivatives,1.157448173

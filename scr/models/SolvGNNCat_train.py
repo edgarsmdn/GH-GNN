@@ -8,10 +8,14 @@ Email: sanchez@mpi-magdeburg.mpg.de
 '''
 
 # Scientific computing
+import numpy as np
 import pandas as pd
 
 # RDKiT
 from rdkit import Chem
+
+# Sklearn
+from sklearn.model_selection import KFold
 
 # Internal utilities
 from SolvGNNCat_architecture import SolvGNNCat, count_parameters
@@ -135,11 +139,11 @@ def train_SolvGNNGH(df, model_name, hyperparameters):
     print_report('\nTraining time (min): ' + str((end-start)/60))
     report.close()
 
-hyperparameters_dict = {'hidden_dim'  : 256,
-                        'lr'          : 0.0005474078198480248,
-                        'n_epochs'    : 300,
-                        'batch_size'  : 23
+hyperparameters_dict = {'hidden_dim'  : 193,
+                        'lr'          : 0.00011559310094158379,
+                        'n_epochs'    : 250,
+                        'batch_size'  : 16
                         }
     
 df = pd.read_csv('../../data/processed/molecular_train.csv')
-train_SolvGNNGH(df, 'SolvGNNCat', hyperparameters_dict)
+train_SolvGNNGH(df, 'SolvGNNGH_epochs_'+str(250), hyperparameters_dict)

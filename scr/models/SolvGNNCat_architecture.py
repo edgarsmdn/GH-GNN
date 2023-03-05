@@ -89,6 +89,7 @@ class SolvGNNCat(nn.Module):
         self.mlp2_unique = nn.Linear(hidden_dim*2, hidden_dim)
         self.mlp3_unique = nn.Linear(hidden_dim, 1)
         
+        
     def generate_sys_graph(self, x, edge_attr, batch_size, n_mols=2):
         
         src = np.arange(batch_size)

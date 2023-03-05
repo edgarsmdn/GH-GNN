@@ -1,6 +1,6 @@
 '''
 Project: GNN_IAC_T
-                    SolvGNNCat
+                     SolvGNNCat
                     
 Author: Edgar Ivan Sanchez Medina
 Email: sanchez@mpi-magdeburg.mpg.de
@@ -73,12 +73,12 @@ def pred_SolvGNNGH(df, model_name, hyperparameters):
     return df
 
 
-epochs = [300]
+epochs = [250]
 
 
-hyperparameters_dict = {'hidden_dim'  : 256,
-                        'lr'          : 0.0005474078198480248,
-                        'batch_size'  : 23
+hyperparameters_dict = {'hidden_dim'  : 193,
+                        'lr'          : 0.00011559310094158379,
+                        'batch_size'  : 16
                         }
 
 
@@ -86,7 +86,7 @@ for e in epochs:
     print('-'*50)
     print('Epochs: ', e)
     
-    model_name = 'SolvGNNCat'
+    model_name = 'SolvGNNGH_epochs_'+str(e)
     
     # Models trained on the complete train/validation set
     print('Predicting with SolvGNNGH')
@@ -104,6 +104,8 @@ for e in epochs:
     ###################################
     # --- Predict Brouwer dataset --- #
     ###################################
+    
+    model_name = 'SolvGNNGH_epochs_'+str(e)
     
     # Models trained on the complete train/validation set
     print('Predicting with SolvGNNGH')

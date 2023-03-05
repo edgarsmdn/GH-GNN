@@ -2,6 +2,6 @@
  Report for SolvGNNGH_wo
 --------------------------------------------------
 ------------------------------
-Training MAE   : 0.10698418
+Training MAE   : 0.098624796
 
-Training time (min): 194.76754254897435
+Training time (min): 178.68631236950557

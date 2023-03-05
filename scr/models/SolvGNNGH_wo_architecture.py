@@ -94,6 +94,8 @@ class SolvGNNGH_wo(nn.Module):
         self.mlp2b = nn.Linear(hidden_dim, hidden_dim)
         self.mlp3b = nn.Linear(hidden_dim, n_classes)
         
+        
+        
     def generate_sys_graph(self, x, edge_attr, batch_size, n_mols=2):
         
         src = np.arange(batch_size)
