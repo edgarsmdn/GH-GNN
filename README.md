@@ -1,6 +1,6 @@
 # Gibbs-Helmholtz Graph Neural Network (GH-GNN)
 
-This repository contains the code used in the paper [Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution](https://arxiv.org/abs/2212.01199). 
+This repository contains the code used in the paper [Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution](https://doi.org/10.1039/D2DD00142J). 
 
 <img align="center" src="https://github.com/edgarsmdn/GH-GNN/blob/main/media/ghgnn_github.png" width="1000">
 
