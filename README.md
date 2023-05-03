@@ -25,8 +25,9 @@ conda env create -f enviornment.yml
 @article{sanchez2022ghgnn,
   title={Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution},
   author={Sanchez Medina, Edgar Ivan and Linke, Steffen and Stoll, Martin and Sundmacher, Kai},
-  journal={arXiv preprint arXiv:2212.01199},
-  year={2022}
+  journal={Digital Discovery},
+  DOI={10.1039/D2DD00142J},
+  year={2023}
 }
 ```
 
