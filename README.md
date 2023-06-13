@@ -27,7 +27,11 @@ conda env create -f enviornment.yml
   author={Sanchez Medina, Edgar Ivan and Linke, Steffen and Stoll, Martin and Sundmacher, Kai},
   journal={Digital Discovery},
   DOI={10.1039/D2DD00142J},
-  year={2023}
+  year={2023},
+  volume={2},
+  issue={3},
+  pages={781-798},
+  publisher={RSC},
 }
 ```
 
