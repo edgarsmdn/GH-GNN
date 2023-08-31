@@ -22,7 +22,7 @@ conda env create -f enviornment.yml
 ## If you use GH-GNN please cite the original publication as:
 
 ```
-@article{sanchez2022ghgnn,
+@article{sanchez2023ghgnn,
   title={Gibbs-Helmholtz Graph Neural Network: capturing the temperature dependency of activity coefficients at infinite dilution},
   author={Sanchez Medina, Edgar Ivan and Linke, Steffen and Stoll, Martin and Sundmacher, Kai},
   journal={Digital Discovery},
